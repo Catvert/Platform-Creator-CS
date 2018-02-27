@@ -31,16 +31,15 @@ namespace Platform_Creator_CS {
         }
 
         public static SceneManager SceneManager { get; private set; }
-
         public static Microsoft.Xna.Framework.Point ScreenSize => Graphics.GraphicsDevice.PresentationParameters.Bounds.Size;
 
         public static Font ImGuiDefaultFont { get; private set; }
         public static Font ImGuiBigFont { get; private set; }
 
         public static Background MainBackground { get; private set; }
+        public static ImGuiMg ImGuiMG { get; private set; }
 
         private SpriteBatch spriteBatch;
-        private ImGuiMg imguiMG;
 
         public static bool Exit { get; set; }
 
@@ -72,11 +71,12 @@ namespace Platform_Creator_CS {
   
         protected override void LoadContent() {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            imguiMG = new ImGuiMg(Window, GraphicsDevice);
+            ImGuiMG = new ImGuiMg(Window, GraphicsDevice);
         }
 
         protected override void Update(GameTime gameTime) {
             SceneManager.Update(gameTime);
+            ImGuiMG.Update(gameTime);
 
             if(Exit)
                 Exit();
@@ -85,13 +85,7 @@ namespace Platform_Creator_CS {
         }
 
         protected override void Draw(GameTime gameTime) {
-            GraphicsDevice.Clear(Color.Black);
-
-            imguiMG.Update(gameTime);
-
-            SceneManager.Render(spriteBatch);
-
-            imguiMG.Draw();
+            SceneManager.Render(spriteBatch, 1f);
 
             base.Draw(gameTime);
         }
@@ -101,7 +95,7 @@ namespace Platform_Creator_CS {
 
             SaveGameConfig();
 
-            imguiMG.Dispose();
+            ImGuiMG.Dispose();
 
             SceneManager.Dispose();
 

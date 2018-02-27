@@ -1,2 +1,10 @@
-20:04:09 [INFO] -> Initialisation en cours .. 
+21:42:03 [INFO] -> Initialisation en cours .. 
  Taille : 1278x664
+21:42:05 [INFO] -> Chargement de la scène : GameScene
+21:42:06 [INFO] -> Chargement de la scène : MainMenuScene
+21:42:08 [INFO] -> Chargement de la scène : GameScene
+21:42:09 [INFO] -> Chargement de la scène : MainMenuScene
+21:42:10 [INFO] -> Chargement de la scène : GameScene
+21:42:12 [INFO] -> Chargement de la scène : MainMenuScene
+21:42:13 [INFO] -> Chargement de la scène : GameScene
+21:42:14 [INFO] -> Chargement de la scène : MainMenuScene

@@ -237,6 +237,19 @@
           "lib/portable-net45+win8+wpa81/MonoGame.Extended.dll": {}
         }
       },
+      "MonoGame.Extended.Animations/1.0.617": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "[1.0.617]",
+          "Newtonsoft.Json": "9.0.0"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Animations.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Animations.dll": {}
+        }
+      },
       "MonoGame.Extended.Graphics/1.0.617": {
         "type": "package",
         "dependencies": {
@@ -248,6 +261,20 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wpa81/MonoGame.Extended.Graphics.dll": {}
+        }
+      },
+      "MonoGame.Extended.Tweening/1.0.617": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "[1.0.617]",
+          "MonoGame.Extended.Animations": "[1.0.617]",
+          "Newtonsoft.Json": "9.0.0"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Tweening.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Tweening.dll": {}
         }
       },
       "MonoGame.Framework.DesktopGL.Core/3.7.0.7": {
@@ -587,6 +614,19 @@
           "lib/portable-net45+win8+wpa81/MonoGame.Extended.dll": {}
         }
       },
+      "MonoGame.Extended.Animations/1.0.617": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "[1.0.617]",
+          "Newtonsoft.Json": "9.0.0"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Animations.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Animations.dll": {}
+        }
+      },
       "MonoGame.Extended.Graphics/1.0.617": {
         "type": "package",
         "dependencies": {
@@ -598,6 +638,20 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wpa81/MonoGame.Extended.Graphics.dll": {}
+        }
+      },
+      "MonoGame.Extended.Tweening/1.0.617": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "[1.0.617]",
+          "MonoGame.Extended.Animations": "[1.0.617]",
+          "Newtonsoft.Json": "9.0.0"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Tweening.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Tweening.dll": {}
         }
       },
       "MonoGame.Framework.DesktopGL.Core/3.7.0.7": {
@@ -1305,6 +1359,18 @@
         "readme.txt"
       ]
     },
+    "MonoGame.Extended.Animations/1.0.617": {
+      "sha512": "4jNNHtE3MDRhfBzabF5F76iuzz8W/bZLAWm7dNdJdGOgdVxNWL8XzYxKdGDUqX3NA7STGduyvE5da6Da+Dk4TQ==",
+      "type": "package",
+      "path": "monogame.extended.animations/1.0.617",
+      "files": [
+        "lib/portable-net45+win8+wpa81/MonoGame.Extended.Animations.dll",
+        "lib/portable-net45+win8+wpa81/MonoGame.Extended.Animations.pdb",
+        "monogame.extended.animations.1.0.617.nupkg.sha512",
+        "monogame.extended.animations.nuspec",
+        "readme.txt"
+      ]
+    },
     "MonoGame.Extended.Graphics/1.0.617": {
       "sha512": "DWW9xYEgnuOGa7VmwrUuMe+nuH8FAzKYnacKpCdAQjxU3/Oft7TmMJshzbtCSS3Ro8VoDHsZCAUImq7iddfPnQ==",
       "type": "package",
@@ -1314,6 +1380,18 @@
         "lib/portable-net45+win8+wpa81/MonoGame.Extended.Graphics.pdb",
         "monogame.extended.graphics.1.0.617.nupkg.sha512",
         "monogame.extended.graphics.nuspec",
+        "readme.txt"
+      ]
+    },
+    "MonoGame.Extended.Tweening/1.0.617": {
+      "sha512": "OBOenBmzaCayVmw+zyQ/JppG8lF2CdaJ6Czkp76cB+VrLOVshlSM1CJ7IsyWc3NLtwDCe2aBrDjSMyS2gG+Vgg==",
+      "type": "package",
+      "path": "monogame.extended.tweening/1.0.617",
+      "files": [
+        "lib/portable-net45+win8+wpa81/MonoGame.Extended.Tweening.dll",
+        "lib/portable-net45+win8+wpa81/MonoGame.Extended.Tweening.pdb",
+        "monogame.extended.tweening.1.0.617.nupkg.sha512",
+        "monogame.extended.tweening.nuspec",
         "readme.txt"
       ]
     },
@@ -1966,6 +2044,7 @@
       "MonoGame.Framework.DesktopGL.Core >= 3.7.0.7",
       "Monogame.Extended >= 1.0.617",
       "Monogame.Extended.Graphics >= 1.0.617",
+      "Monogame.Extended.Tweening >= 1.0.617",
       "Newtonsoft.JSON >= 11.0.1"
     ]
   },
@@ -2038,6 +2117,10 @@
             "target": "Package",
             "version": "[1.0.617, )"
           },
+          "Monogame.Extended.Tweening": {
+            "target": "Package",
+            "version": "[1.0.617, )"
+          },
           "Newtonsoft.JSON": {
             "target": "Package",
             "version": "[11.0.1, )"
@@ -2071,8 +2154,28 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+      "message": "Package 'MonoGame.Extended.Animations 1.0.617' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MonoGame.Extended.Animations",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
       "message": "Package 'MonoGame.Extended.Graphics 1.0.617' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "MonoGame.Extended.Graphics",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MonoGame.Extended.Tweening 1.0.617' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MonoGame.Extended.Tweening",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.0"
       ]

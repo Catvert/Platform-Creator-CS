@@ -120,9 +120,8 @@ namespace Platform_Creator_CS {
 
             var pp = _graphicsDevice.PresentationParameters;
             io.DisplaySize = new System.Numerics.Vector2(pp.BackBufferWidth, pp.BackBufferHeight);
-            io.DisplayFramebufferScale = new System.Numerics.Vector2(1f);
 
-            ImGui.NewFrame();
+           // ImGui.NewFrame();
         }
 
         public unsafe void Draw() {

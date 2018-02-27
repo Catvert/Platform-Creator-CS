@@ -9,15 +9,16 @@ namespace Platform_Creator_CS.Scenes {
     public class MainMenuScene : Scene {
         public MainMenuScene() : base(PCGame.MainBackground) {}
 
-        public override void Render(SpriteBatch batch) {
-            base.Render(batch);
+        public override void Render(SpriteBatch batch, float alpha) {
+            base.Render(batch, alpha);
 
             DrawMainMenu();
         }
 
         private void DrawMainMenu() {
             ImGuiHelper.WithMenuWindow(new Vec2(300, 180), () => {
-                ImGui.Button("Jouer !", new Vec2(-1, 0));
+                if(ImGui.Button("Jouer !", new Vec2(-1, 0)))
+                    PCGame.SceneManager.LoadScene(new GameScene(), true, true);
                 ImGui.Button("Options", new Vec2(-1, 0));
                 if(ImGui.Button("Quitter", new Vec2(-1, 0)))
                     PCGame.Exit = true;

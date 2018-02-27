@@ -17,7 +17,7 @@ namespace Platform_Creator_CS.Utility {
             Type = type;
         }
 
-        public abstract void Render(SpriteBatch batch);
+        public abstract void Render(SpriteBatch batch, float alpha);
     }
 
     public class StandardBackground : Background {
@@ -28,15 +28,15 @@ namespace Platform_Creator_CS.Utility {
             _backgroundTexture = ResourceManager.GetTexture(file);
          }
 
-        public override void Render(SpriteBatch batch) {
-            batch.Draw(_backgroundTexture, new Rectangle(0, 0, PCGame.ScreenSize.X, PCGame.ScreenSize.Y), null, Color.White);
+        public override void Render(SpriteBatch batch, float alpha) {
+            batch.Draw(_backgroundTexture, new Rectangle(0, 0, PCGame.ScreenSize.X, PCGame.ScreenSize.Y), null, new Color(255, 255, 255, alpha));
         }
     }
 
     public class ParallaxBackground : Background {
         public ParallaxBackground() : base(BackgroundType.Parallax) { }
 
-        public override void Render(SpriteBatch batch)
+        public override void Render(SpriteBatch batch, float alpha)
         {
             throw new System.NotImplementedException();
         }

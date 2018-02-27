@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "233bcbff800954f926adf0ebad8951cc75cde01b"
+    "signature": "5a62c1ecf3675e36c9b75cf85ee21dffe2b773d9"
   },
   "compilationOptions": {},
   "targets": {
@@ -14,6 +14,7 @@
           "MonoGame.Framework.DesktopGL.Core": "3.7.0.7",
           "MonoGame.Extended": "1.0.617",
           "MonoGame.Extended.Graphics": "1.0.617",
+          "MonoGame.Extended.Tweening": "1.0.617",
           "Newtonsoft.Json": "11.0.1"
         },
         "runtime": {
@@ -58,6 +59,15 @@
           "lib/portable-net45+win8+wpa81/MonoGame.Extended.dll": {}
         }
       },
+      "MonoGame.Extended.Animations/1.0.617": {
+        "dependencies": {
+          "MonoGame.Extended": "1.0.617",
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Animations.dll": {}
+        }
+      },
       "MonoGame.Extended.Graphics/1.0.617": {
         "dependencies": {
           "MonoGame.Extended": "1.0.617",
@@ -65,6 +75,16 @@
         },
         "runtime": {
           "lib/portable-net45+win8+wpa81/MonoGame.Extended.Graphics.dll": {}
+        }
+      },
+      "MonoGame.Extended.Tweening/1.0.617": {
+        "dependencies": {
+          "MonoGame.Extended": "1.0.617",
+          "MonoGame.Extended.Animations": "1.0.617",
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Tweening.dll": {}
         }
       },
       "MonoGame.Framework.DesktopGL.Core/3.7.0.7": {
@@ -162,12 +182,26 @@
       "path": "monogame.extended/1.0.617",
       "hashPath": "monogame.extended.1.0.617.nupkg.sha512"
     },
+    "MonoGame.Extended.Animations/1.0.617": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-4jNNHtE3MDRhfBzabF5F76iuzz8W/bZLAWm7dNdJdGOgdVxNWL8XzYxKdGDUqX3NA7STGduyvE5da6Da+Dk4TQ==",
+      "path": "monogame.extended.animations/1.0.617",
+      "hashPath": "monogame.extended.animations.1.0.617.nupkg.sha512"
+    },
     "MonoGame.Extended.Graphics/1.0.617": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-DWW9xYEgnuOGa7VmwrUuMe+nuH8FAzKYnacKpCdAQjxU3/Oft7TmMJshzbtCSS3Ro8VoDHsZCAUImq7iddfPnQ==",
       "path": "monogame.extended.graphics/1.0.617",
       "hashPath": "monogame.extended.graphics.1.0.617.nupkg.sha512"
+    },
+    "MonoGame.Extended.Tweening/1.0.617": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OBOenBmzaCayVmw+zyQ/JppG8lF2CdaJ6Czkp76cB+VrLOVshlSM1CJ7IsyWc3NLtwDCe2aBrDjSMyS2gG+Vgg==",
+      "path": "monogame.extended.tweening/1.0.617",
+      "hashPath": "monogame.extended.tweening.1.0.617.nupkg.sha512"
     },
     "MonoGame.Framework.DesktopGL.Core/3.7.0.7": {
       "type": "package",
