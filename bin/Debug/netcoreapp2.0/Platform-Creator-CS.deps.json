@@ -1,0 +1,208 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "233bcbff800954f926adf0ebad8951cc75cde01b"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.0": {
+      "Platform-Creator-CS/1.0.0": {
+        "dependencies": {
+          "ImGui.NET": "0.4.3",
+          "Jint": "2.11.58",
+          "MonoGame.Content.Builder": "3.7.0.4",
+          "MonoGame.Framework.DesktopGL.Core": "3.7.0.7",
+          "MonoGame.Extended": "1.0.617",
+          "MonoGame.Extended.Graphics": "1.0.617",
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "runtime": {
+          "Platform-Creator-CS.dll": {}
+        }
+      },
+      "ImGui.NET/0.4.3": {
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/ImGui.NET.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx-x64/native/cimgui.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native"
+          },
+          "runtimes/ubuntu-x64/native/cimgui.so": {
+            "rid": "ubuntu-x64",
+            "assetType": "native"
+          },
+          "runtimes/win-x64/native/cimgui.dll": {
+            "rid": "win-x64",
+            "assetType": "native"
+          }
+        }
+      },
+      "Jint/2.11.58": {
+        "runtime": {
+          "lib/netstandard2.0/Jint.dll": {}
+        }
+      },
+      "MonoGame.Content.Builder/3.7.0.4": {},
+      "MonoGame.Extended/1.0.617": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.dll": {}
+        }
+      },
+      "MonoGame.Extended.Graphics/1.0.617": {
+        "dependencies": {
+          "MonoGame.Extended": "1.0.617",
+          "Newtonsoft.Json": "11.0.1"
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Extended.Graphics.dll": {}
+        }
+      },
+      "MonoGame.Framework.DesktopGL.Core/3.7.0.7": {
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Framework.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libSDL2-2.so": {
+            "rid": "linux-x64",
+            "assetType": "native"
+          },
+          "runtimes/linux-x64/native/libopenal.so": {
+            "rid": "linux-x64",
+            "assetType": "native"
+          },
+          "runtimes/linux-x86/native/libSDL2-2.so": {
+            "rid": "linux-x86",
+            "assetType": "native"
+          },
+          "runtimes/linux-x86/native/libopenal.so": {
+            "rid": "linux-x86",
+            "assetType": "native"
+          },
+          "runtimes/osx/native/libSDL2-2.dylib": {
+            "rid": "osx",
+            "assetType": "native"
+          },
+          "runtimes/osx/native/libopenal.dylib": {
+            "rid": "osx",
+            "assetType": "native"
+          },
+          "runtimes/win-x64/native/libSDL2-2.dll": {
+            "rid": "win-x64",
+            "assetType": "native"
+          },
+          "runtimes/win-x64/native/libopenal.dll": {
+            "rid": "win-x64",
+            "assetType": "native"
+          },
+          "runtimes/win-x86/native/libSDL2-2.dll": {
+            "rid": "win-x86",
+            "assetType": "native"
+          },
+          "runtimes/win-x86/native/libopenal.dll": {
+            "rid": "win-x86",
+            "assetType": "native"
+          }
+        }
+      },
+      "Newtonsoft.Json/11.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "System.Buffers/4.4.0": {},
+      "System.Numerics.Vectors/4.4.0": {},
+      "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Platform-Creator-CS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ImGui.NET/0.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6V6qixhp+pTHvkyrztZnQRVVSByxiGc4uYWO/BEqxks2+gIPadHCRqrY/YK/Mh9hV+ymPgqGHKHAatI5vVU0Hw==",
+      "path": "imgui.net/0.4.3",
+      "hashPath": "imgui.net.0.4.3.nupkg.sha512"
+    },
+    "Jint/2.11.58": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-obRlPnuSmbjO7I2bfuKc1d+K1LB3xyg1Cnm2MT7PGUOHOntcdR96pDhsQnWBI5Dhxqr1Bj5/odpNi/B+AwVlPA==",
+      "path": "jint/2.11.58",
+      "hashPath": "jint.2.11.58.nupkg.sha512"
+    },
+    "MonoGame.Content.Builder/3.7.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EfPrCHTWQ4O5G/XIfGqWx1J9vvI4QrUI8SjBCIT8Aeepl0y2oi1+YjvmBbxjFvJb2uGkYnLq4GCwXuquMi3TYw==",
+      "path": "monogame.content.builder/3.7.0.4",
+      "hashPath": "monogame.content.builder.3.7.0.4.nupkg.sha512"
+    },
+    "MonoGame.Extended/1.0.617": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-r9L4yzSMcpCF74bxyexVpsUIBwhbJKMNmtgNanlMKyZ2oau5W/6z37rjuqjjQa9qCY1OFV+mIFeUmTflFEHN8w==",
+      "path": "monogame.extended/1.0.617",
+      "hashPath": "monogame.extended.1.0.617.nupkg.sha512"
+    },
+    "MonoGame.Extended.Graphics/1.0.617": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DWW9xYEgnuOGa7VmwrUuMe+nuH8FAzKYnacKpCdAQjxU3/Oft7TmMJshzbtCSS3Ro8VoDHsZCAUImq7iddfPnQ==",
+      "path": "monogame.extended.graphics/1.0.617",
+      "hashPath": "monogame.extended.graphics.1.0.617.nupkg.sha512"
+    },
+    "MonoGame.Framework.DesktopGL.Core/3.7.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DDQdsO3OreMfpKCPCjBP0hiClhvwo71bK68F8fCP0utkOKbL3dvkVfqrYinlM+QSt30dDt21yO9pMJJStikpHA==",
+      "path": "monogame.framework.desktopgl.core/3.7.0.7",
+      "hashPath": "monogame.framework.desktopgl.core.3.7.0.7.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pNN4l+J6LlpIvHOeNdXlwxv39NPJ2B5klz+Rd2UQZIx30Squ5oND1Yy3wEAUoKn0GPUj6Yxt9lxlYWQqfZcvKg==",
+      "path": "newtonsoft.json/11.0.1",
+      "hashPath": "newtonsoft.json.11.0.1.nupkg.sha512"
+    },
+    "System.Buffers/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
+      "path": "system.buffers/4.4.0",
+      "hashPath": "system.buffers.4.4.0.nupkg.sha512"
+    },
+    "System.Numerics.Vectors/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UiLzLW+Lw6HLed1Hcg+8jSRttrbuXv7DANVj0DkL9g6EnnzbL75EB7EWsw5uRbhxd/4YdG8li5XizGWepmG3PQ==",
+      "path": "system.numerics.vectors/4.4.0",
+      "hashPath": "system.numerics.vectors.4.4.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
+      "path": "system.runtime.compilerservices.unsafe/4.4.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+    }
+  }
+}

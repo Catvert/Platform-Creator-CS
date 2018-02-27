@@ -1,0 +1,26 @@
+/home/finch/Projects/Platform-Creator-CS/bin/Debug/netcoreapp2.0/ubuntu-x64/libhostpolicy.so
+/home/finch/Projects/Platform-Creator-CS/bin/Debug/netcoreapp2.0/ubuntu-x64/libhostfxr.so
+/home/finch/Projects/Platform-Creator-CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS
+/home/finch/Projects/Platform-Creator-CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.deps.json
+/home/finch/Projects/Platform-Creator-CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.runtimeconfig.json
+/home/finch/Projects/Platform-Creator-CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.runtimeconfig.dev.json
+/home/finch/Projects/Platform-Creator-CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.dll
+/home/finch/Projects/Platform-Creator-CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.pdb
+/home/finch/Projects/Platform-Creator-CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.csproj.CoreCompileInputs.cache
+/home/finch/Projects/Platform-Creator-CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.AssemblyInfoInputs.cache
+/home/finch/Projects/Platform-Creator-CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.AssemblyInfo.cs
+/home/finch/Projects/Platform-Creator-CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.dll
+/home/finch/Projects/Platform-Creator-CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.pdb
+/home/finch/Projects/Platform Creator CS/bin/Debug/netcoreapp2.0/ubuntu-x64/libhostpolicy.so
+/home/finch/Projects/Platform Creator CS/bin/Debug/netcoreapp2.0/ubuntu-x64/libhostfxr.so
+/home/finch/Projects/Platform Creator CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS
+/home/finch/Projects/Platform Creator CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.deps.json
+/home/finch/Projects/Platform Creator CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.runtimeconfig.json
+/home/finch/Projects/Platform Creator CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.runtimeconfig.dev.json
+/home/finch/Projects/Platform Creator CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.dll
+/home/finch/Projects/Platform Creator CS/bin/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.pdb
+/home/finch/Projects/Platform Creator CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.csproj.CoreCompileInputs.cache
+/home/finch/Projects/Platform Creator CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.AssemblyInfoInputs.cache
+/home/finch/Projects/Platform Creator CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.AssemblyInfo.cs
+/home/finch/Projects/Platform Creator CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.dll
+/home/finch/Projects/Platform Creator CS/obj/Debug/netcoreapp2.0/ubuntu-x64/Platform-Creator-CS.pdb
