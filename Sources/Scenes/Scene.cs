@@ -1,4 +1,5 @@
 using System;
+using ImGuiNET;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
@@ -11,7 +12,7 @@ namespace Platform_Creator_CS.Scenes {
         public Camera2D Camera { get; } = new Camera2D(new BoxingViewportAdapter(PCGame.GameWindow, PCGame.Graphics.GraphicsDevice, Constants.ViewportRatioWidth, Constants.ViewportRatioHeight));
         protected Background Background { get; set; }
         public Color BackgroundColor { get; protected set; } = Color.Black;
-
+        protected bool IsUIHover() => ImGui.IsAnyItemHovered() || ImGui.IsAnyItemActive();
         protected Scene(Background background) {
             Background = background;
         }

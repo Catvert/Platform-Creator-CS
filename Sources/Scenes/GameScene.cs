@@ -9,6 +9,8 @@ namespace Platform_Creator_CS.Scenes {
                 PCGame.SceneManager.LoadScene(new MainMenuScene(), true, true);
             }
         }
-
+        public override void Render(Microsoft.Xna.Framework.Graphics.SpriteBatch batch, float alpha) {
+            base.Render(batch, alpha);
+        }
     }
 }

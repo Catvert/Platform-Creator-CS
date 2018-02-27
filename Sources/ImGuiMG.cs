@@ -153,7 +153,7 @@ namespace Platform_Creator_CS {
 
         private unsafe void RenderImDrawData(DrawData * drawData) {
             if (drawData == null) {
-                Console.WriteLine("No frame rendered for ImGUI.NET, but draw was called.");
+                //Console.WriteLine("No frame rendered for ImGUI.NET, but draw was called.");
                 return;
             }
 
