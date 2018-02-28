@@ -8,7 +8,7 @@ using System.Linq;
 using ImGuiNET;
 
 namespace Platform_Creator_CS.Scenes {
-    public class SceneManager : IRenderable, IUpdeatable, IDisposable {
+    public class SceneManager : IRenderable, Utility.IUpdateable, IDisposable {
         private class NextWaitingScene {
             public Scene Scene { get; }
             public bool ApplyTransition { get; }

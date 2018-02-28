@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 
 namespace Platform_Creator_CS.Utility {
-    public interface IUpdeatable {
+    public interface IUpdateable {
         void Update(GameTime gameTime);
     }
 }

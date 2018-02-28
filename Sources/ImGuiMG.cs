@@ -38,7 +38,6 @@ namespace Platform_Creator_CS {
         #region Keys
 
         private void OnKeyPress(object sender, TextInputEventArgs e) {
-            Console.Write("Char typed: " + e.Character);
             ImGui.AddInputCharacter(e.Character);
         }
 

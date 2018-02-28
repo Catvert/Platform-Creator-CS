@@ -1,15 +1,19 @@
+using System;
+using Microsoft.Xna.Framework;
+
 namespace Platform_Creator_CS.Utility {
     public class Rect {
-        private Point _position;
-        private Size _size;
-
-        public Point Position { get => _position; set => _position = value; }
-
-        public Size Size { get => _size; set => _size = value; }
+        public Point Position;
+        public Size Size;
 
         public Rect (Point pos, Size size) {
-            _position = pos;
-            _size = size;
+            Position = pos;
+            Size = size;
         }
+        public Rect(float x, float y, int width, int height) {
+            Position = new Point(x, y);
+            Size = new Size(width, height);
+        }
+        public Rectangle ToRectangle() => new Rectangle((int)Math.Round(Position.X), (int)Math.Round(Position.Y), Size.Width, Size.Height);
     }
 }
