@@ -1,15 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
+using Newtonsoft.Json;
 using Platform_Creator_CS.Utility;
 using Point = Platform_Creator_CS.Utility.Point;
 
 namespace Platform_Creator_CS.Entities.Containers {
     public class EntityMatrixContainer : EntityContainer {
         private List<Entity>[,] _matrixGrid;
+
         private int _matrixHeight = Constants.MinMatrixSize;
         private int _matrixWidth = Constants.MinMatrixSize;
 
@@ -30,14 +33,15 @@ namespace Platform_Creator_CS.Entities.Containers {
             };
         }
 
-        public Rect MatrixRect { get; set; }
+        [JsonIgnore] public Rect MatrixRect { get; set; }
 
+        [JsonIgnore]
         public Rect ActiveRect { get; set; } =
             new Rect(0f, 0f, Constants.ViewportRatioWidth, Constants.ViewportRatioHeight);
 
-        public IEnumerable<GridCell> ActiveGridCells { get; private set; }
+        [JsonIgnore] public IEnumerable<GridCell> ActiveGridCells { get; private set; }
 
-        public bool DrawDebug { get; set; } = true;
+        [JsonIgnore] public bool DrawDebugRects { get; set; } = true;
 
         public Entity FollowEntity { get; set; } = null;
 
@@ -100,7 +104,26 @@ namespace Platform_Creator_CS.Entities.Containers {
         public override void Render(SpriteBatch batch, float alpha) {
             base.Render(batch, alpha);
 
-            DrawDebugCells(batch);
+            DrawDebug(batch, alpha);
+        }
+
+        public IEnumerable<Entity> GetAllEntitiesInCells(IEnumerable<GridCell> cells) {
+            var entities = new List<Entity>();
+
+            foreach (var cell in cells) entities.AddRange(_matrixGrid[cell.X, cell.Y]);
+
+            return entities;
+        }
+
+        public IEnumerable<Entity> GetAllEntitiesInCells(Rect rect) => GetAllEntitiesInCells(GetCellsInRect(rect));
+
+        [OnDeserialized]
+        private void OnDeserialized(StreamingContext context) {
+            foreach (var entity in Entities) {
+                PlaceEntityInMatrix(entity);
+
+                entity.Box.OnChangedEventHandler += rect => PlaceEntityInMatrix(entity);
+            }
         }
 
         private void AllocateMatrix() {
@@ -114,14 +137,18 @@ namespace Platform_Creator_CS.Entities.Containers {
             ActiveGridCells = GetCellsInRect(ActiveRect);
         }
 
-        private void DrawDebugCells(SpriteBatch batch) {
-            if (DrawDebug)
+        private void DrawDebug(SpriteBatch batch, float alpha) {
+            if (DrawDebugRects) {
                 foreach (var cell in ActiveGridCells) {
                     var rect = GetRectangleOfCell(cell);
- 
+
                     batch.DrawRectangle(rect.Position.ToVector2(), new Size2(rect.Size.Width, rect.Size.Height),
-                        Color.White);
+                        new Color(255, 255, 255, alpha));
                 }
+
+                batch.DrawRectangle(ActiveRect.Position.ToVector2(),
+                    new Size2(ActiveRect.Size.Width, ActiveRect.Size.Height), new Color(128, 128, 128, alpha));
+            }
         }
 
         private void PlaceEntityInMatrix(Entity entity) {
@@ -185,18 +212,6 @@ namespace Platform_Creator_CS.Entities.Containers {
             }
 
             return cells;
-        }
-
-        public IEnumerable<Entity> GetAllEntitiesInCells(IEnumerable<GridCell> cells) {
-            var entities = new List<Entity>();
-
-            foreach (var cell in cells) entities.AddRange(_matrixGrid[cell.X, cell.Y]);
-
-            return entities;
-        }
-
-        public IEnumerable<Entity> GetAllEntitiesInCells(Rect rect) {
-            return GetAllEntitiesInCells(GetCellsInRect(rect));
         }
     }
 }

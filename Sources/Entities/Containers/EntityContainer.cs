@@ -3,12 +3,19 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Platform_Creator_CS.Utility;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace Platform_Creator_CS.Entities.Containers {
+    [JsonObject(IsReference = true)]
     public class EntityContainer : Utility.IUpdateable, IRenderable {
+        [JsonProperty("entities")]
         protected List<Entity> Entities { get; } = new List<Entity>();
+
         protected System.Action<Entity> OnRemoveEntity { get; set; } = null;
+
+        [JsonIgnore]
         public bool AllowRenderingEntities { get; set; } = true;
+        [JsonIgnore]
         public bool AllowUpdatingEntities { get; set; } = true;
 
         private readonly List<Entity> _removeEntities = new List<Entity>();

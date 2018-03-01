@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+
 namespace Platform_Creator_CS.Utility {
     public struct Size {
         public int Width;

@@ -8,6 +8,7 @@ using Platform_Creator_CS.Entities.Actions;
 using Platform_Creator_CS.Entities.Components;
 using Platform_Creator_CS.Entities.Containers;
 using Platform_Creator_CS.Managers;
+using Platform_Creator_CS.Serialization;
 using Platform_Creator_CS.Utility;
 
 namespace Platform_Creator_CS.Scenes {
@@ -15,10 +16,9 @@ namespace Platform_Creator_CS.Scenes {
         protected override EntityContainer EntityContainer { get; } = new EntityMatrixContainer();
 
         public GameScene() : base(new StandardBackground(Constants.BackgroundsDir + "standard/1.png")) {
-            var sheet = SpriteSheetLoader.Load(Constants.PacksSMCDir + "blocks.atlas");
 
             var state = new Entities.EntityState("default");
-            state.AddComponent(new TextureComponent(sheet.GetFrame("blocks/metal/Metal Blue")));
+            state.AddComponent(new TextureComponent(Constants.PacksSMCDir + "blocks.atlas", "blocks/metal/Metal Blue"));
             
             state.AddComponent(new InputComponent(
                 new InputData(Keys.Q, true, new MoveAction(-10, 0)),
@@ -27,7 +27,12 @@ namespace Platform_Creator_CS.Scenes {
                 new InputData(Keys.S, true, new MoveAction(0, 10))
             ));
 
-            EntityContainer.AddEntity(new Entities.Entity("test", "hi", new Rect(100, 100, 50, 50), state));      
+            var entity = EntityContainer.AddEntity(new Entities.Entity("test", "hi", new Rect(100, 100, 50, 50), state));
+
+            ((EntityMatrixContainer) EntityContainer).FollowEntity = entity;
+
+            EntityContainer = SerializationFactory.Copy<EntityMatrixContainer>((EntityMatrixContainer)EntityContainer);
+            SerializationFactory.SerializeToFile(EntityContainer, Constants.AssetsDir + "data.json");
         }
 
         public override void Update(GameTime gameTime) {

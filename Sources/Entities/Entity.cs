@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Platform_Creator_CS.Entities.Actions;
@@ -5,10 +6,16 @@ using Platform_Creator_CS.Entities.Containers;
 using Platform_Creator_CS.Utility;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Action = Platform_Creator_CS.Entities.Actions.Action;
 
 namespace Platform_Creator_CS.Entities {
+    [JsonObject(IsReference = true)]
     public class Entity : Utility.IUpdateable, IRenderable {
+        [JsonProperty(propertyName: "states")]
         private readonly List<EntityState> _states = new List<EntityState>();
+
         private int _currentState;
         private int _layer;
         private EntityContainer _container;
@@ -45,8 +52,11 @@ namespace Platform_Creator_CS.Entities {
             Name = name;
             Box = box;
             
-            _states.Add(defaultState);
-            _states.AddRange(otherStates);
+            if(defaultState != null)
+                _states.Add(defaultState);
+
+            if(otherStates != null)
+                _states.AddRange(otherStates);
 
             Container = container;
         }
@@ -92,5 +102,10 @@ namespace Platform_Creator_CS.Entities {
         public void Update(GameTime gameTime) {
             GetCurrentState().Update(gameTime);
         }
+
+        [OnDeserialized]
+        private void OnDeserialized(StreamingContext context) {
+           SetState(InitialState, true);
+        } 
     }
 }

@@ -4,6 +4,7 @@ using System.IO;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Media;
+using Platform_Creator_CS.Utility;
 
 namespace Platform_Creator_CS.Managers {
     public static class ResourceManager {
@@ -30,6 +31,8 @@ namespace Platform_Creator_CS.Managers {
                 return sound;
             }
         }
+
+        public static SpriteFrame GetFrame(string sheet, string frame) => SpriteSheetLoader.Load(sheet).GetFrame(frame);
 
         public static void Dispose() {
             foreach (var texture in Textures.Values)

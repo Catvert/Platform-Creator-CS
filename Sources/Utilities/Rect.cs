@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Xna.Framework;
+using Newtonsoft.Json;
 
 namespace Platform_Creator_CS.Utility {
     public class Rect {
@@ -32,6 +33,7 @@ namespace Platform_Creator_CS.Utility {
         public float Top() => _position.Y + _size.Height;
         public Point Center() => new Point(_position.X + _size.Width / 2f, _position.Y + _size.Height / 2f);
 
+        [JsonConstructor]
         public Rect (Point pos, Size size) {
             _position = pos;
             _size = size;

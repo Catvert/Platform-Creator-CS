@@ -7,10 +7,12 @@ using Platform_Creator_CS.Entities.Components;
 using Platform_Creator_CS.Entities.Containers;
 using Platform_Creator_CS.Utility;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace Platform_Creator_CS.Entities {
     public class EntityState : Utility.IUpdateable, IRenderable
     {
+        [JsonProperty(propertyName: "components")]
         private readonly List<Component> _components = new List<Component>();
 
         private Entity _entity;
