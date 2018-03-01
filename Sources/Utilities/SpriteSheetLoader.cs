@@ -25,10 +25,8 @@ namespace Platform_Creator_CS.Utility {
 
                     var texture = ResourceManager.GetTexture($"{new FileInfo(file).Directory}/{texturePath}");
 
-                    string nextLine;
-
                     while (true) {
-                        nextLine = reader.ReadLine();
+                        var nextLine = reader.ReadLine();
 
                         if (string.IsNullOrEmpty(nextLine))
                             break;
@@ -50,7 +48,7 @@ namespace Platform_Creator_CS.Utility {
             var offset = reader.ReadLine();
             var index = reader.ReadLine();
 
-            return (regionName, new SpriteFrame(texture, new Rectangle((int) xy.X, (int) xy.Y, size.Width, size.Height), new Vector2(origin.X, origin.Y)));
+            return (regionName, new SpriteFrame(texture, new Rectangle((int) xy.X, (int) xy.Y, size.Width, size.Height)));
         }
 
         private static bool ReadBool(string line) {

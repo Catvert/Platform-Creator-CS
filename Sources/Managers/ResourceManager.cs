@@ -7,34 +7,34 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Platform_Creator_CS.Managers {
     public static class ResourceManager {
-        private static Dictionary<string, Texture2D> _textures = new Dictionary<string, Texture2D>();
-        private static Dictionary<string, SoundEffect> _sounds = new Dictionary<string, SoundEffect>();
+        private static readonly Dictionary<string, Texture2D> Textures = new Dictionary<string, Texture2D>();
+        private static readonly Dictionary<string, SoundEffect> Sounds = new Dictionary<string, SoundEffect>();
 
         public static Texture2D GetTexture(string file) {
-            if (_textures.ContainsKey(file))
-                return _textures[file];
+            if (Textures.ContainsKey(file))
+                return Textures[file];
 
             using(var fs = File.Open(file, FileMode.Open)) {
                 var texture = Texture2D.FromStream(PCGame.Graphics.GraphicsDevice, fs);
-                _textures[file] = texture;
+                Textures[file] = texture;
                 return texture;
             }
         }
 
         public static SoundEffect GetSound(string file) {
-            if (_sounds.ContainsKey(file))
-                return _sounds[file];
+            if (Sounds.ContainsKey(file))
+                return Sounds[file];
             using(var fs = File.Open(file, FileMode.Open)) {
                 var sound = SoundEffect.FromStream(fs);
-                _sounds[file] = sound;
+                Sounds[file] = sound;
                 return sound;
             }
         }
 
         public static void Dispose() {
-            foreach (var texture in _textures.Values)
+            foreach (var texture in Textures.Values)
                 texture.Dispose();
-            foreach (var sound in _sounds.Values)
+            foreach (var sound in Sounds.Values)
                 sound.Dispose();
         }
     }

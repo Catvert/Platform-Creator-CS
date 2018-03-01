@@ -1,3 +1,5 @@
+using Microsoft.Xna.Framework;
+
 namespace Platform_Creator_CS.Utility {
     public struct Point {
         public float X;
@@ -7,5 +9,7 @@ namespace Platform_Creator_CS.Utility {
             X = x;
             Y = y;
         }
+
+        public Vector2 ToVector2() => new Vector2(X, Y);
     }
 }

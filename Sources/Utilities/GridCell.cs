@@ -7,5 +7,10 @@ namespace Platform_Creator_CS.Utility {
             X = x;
             Y = y;
         }
+
+        public void Deconstruct(out int x, out int y) {
+            x = X;
+            y = Y;
+        }
     }
 }

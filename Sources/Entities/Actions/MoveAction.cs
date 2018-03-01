@@ -10,8 +10,7 @@ namespace Platform_Creator_CS.Entities.Actions {
         }
 
         public override void Invoke(Entity entity) {
-            entity.Box.Position.X += MoveX;
-            entity.Box.Position.Y += MoveY;
+            entity.Box.Move(MoveX, MoveY);
         }
     }
 }

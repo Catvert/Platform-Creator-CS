@@ -1,9 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/finch/.dotnet/store/|arch|/|tfm|",
-      "/home/finch/.nuget/packages",
-      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      "C:\\Users\\Finch-VM\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Finch-VM\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }
 }

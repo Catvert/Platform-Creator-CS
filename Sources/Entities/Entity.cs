@@ -8,9 +8,9 @@ using System.Linq;
 
 namespace Platform_Creator_CS.Entities {
     public class Entity : Utility.IUpdateable, IRenderable {
-        private List<EntityState> _states = new List<EntityState>();
-        private int _currentState = 0;
-        private int _layer = 0;
+        private readonly List<EntityState> _states = new List<EntityState>();
+        private int _currentState;
+        private int _layer;
         private EntityContainer _container;
 
         public string Tag { get; set; }

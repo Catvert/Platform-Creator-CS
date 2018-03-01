@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Platform_Creator_CS.Entities.Actions;
-using Platform_Creator_CS.Utility;
 
 namespace Platform_Creator_CS.Entities.Components {
     public class InputComponent : Component, Utility.IUpdateable {

@@ -10,6 +10,9 @@ namespace Platform_Creator_CS.Utility {
         public const int MinLayer = -100;
         public const int MaxLayer = 100;
 
+        public const int MinMatrixSize = 10;
+        public const int MatrixCellSize = 300;
+
         public const int ViewportRatioWidth = 1920;
         public const int ViewportRatioHeight = 1080;
 

@@ -18,3 +18,14 @@
 /home/finch/Projects/Platform Creator CS/obj/Debug/netcoreapp2.0/Platform-Creator-CS.AssemblyInfo.cs
 /home/finch/Projects/Platform Creator CS/obj/Debug/netcoreapp2.0/Platform-Creator-CS.dll
 /home/finch/Projects/Platform Creator CS/obj/Debug/netcoreapp2.0/Platform-Creator-CS.pdb
+Z:\Projects\Platform Creator CS\obj\Debug\netcoreapp2.0\Platform-Creator-CS.csproj.CoreCompileInputs.cache
+Z:\Projects\Platform Creator CS\obj\Debug\netcoreapp2.0\Platform-Creator-CS.AssemblyInfoInputs.cache
+Z:\Projects\Platform Creator CS\obj\Debug\netcoreapp2.0\Platform-Creator-CS.AssemblyInfo.cs
+Z:\Projects\Platform Creator CS\obj\Debug\netcoreapp2.0\Platform-Creator-CS.dll
+Z:\Projects\Platform Creator CS\obj\Debug\netcoreapp2.0\Platform-Creator-CS.pdb
+Z:\Projects\Platform Creator CS\bin\Debug\netcoreapp2.0\Platform-Creator-CS.deps.json
+Z:\Projects\Platform Creator CS\bin\Debug\netcoreapp2.0\Platform-Creator-CS.runtimeconfig.json
+Z:\Projects\Platform Creator CS\bin\Debug\netcoreapp2.0\Platform-Creator-CS.runtimeconfig.dev.json
+Z:\Projects\Platform Creator CS\bin\Debug\netcoreapp2.0\Platform-Creator-CS.dll
+Z:\Projects\Platform Creator CS\bin\Debug\netcoreapp2.0\Platform-Creator-CS.pdb
+Z:\Projects\Platform Creator CS\obj\Debug\netcoreapp2.0\Platform-Creator-CS.csprojResolveAssemblyReference.cache

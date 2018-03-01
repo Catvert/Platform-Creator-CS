@@ -11,15 +11,15 @@ namespace Platform_Creator_CS.Entities.Containers {
         public bool AllowRenderingEntities { get; set; } = true;
         public bool AllowUpdatingEntities { get; set; } = true;
 
-        private List<Entity> RemoveEntities = new List<Entity>();
+        private readonly List<Entity> _removeEntities = new List<Entity>();
 
         protected virtual IEnumerable<Entity> GetProcessEntities() => Entities;
 
         public IEnumerable<Entity> GetEntities() => Entities;
 
-        public IEnumerable<Entity> FindEntitiesByTag(string tag) => Entities.FindAll(e => e.Tag == tag);
+        public virtual IEnumerable<Entity> FindEntitiesByTag(string tag) => Entities.FindAll(e => e.Tag == tag);
 
-        public Entity AddEntity(Entity entity) {
+        public virtual Entity AddEntity(Entity entity) {
             Entities.Add(entity);
 
             entity.Container = this;
@@ -28,20 +28,16 @@ namespace Platform_Creator_CS.Entities.Containers {
         }
 
         public void RemoveEntity(Entity entity) {
-            RemoveEntities.Add(entity);
+            _removeEntities.Add(entity);
         }
         
-        public EntityContainer() {
-           
-        }
-        
-        public void Render(SpriteBatch batch, float alpha) {
+        public virtual void Render(SpriteBatch batch, float alpha) {
             if(AllowRenderingEntities)
                 foreach(var entity in GetProcessEntities().OrderBy(e => e.Layer))
                     entity.Render(batch, alpha);
         }
 
-        public void Update(GameTime gameTime) {
+        public virtual void Update(GameTime gameTime) {
             if(AllowUpdatingEntities) {
                 foreach(var entity in GetProcessEntities()) {
                     entity.Update(gameTime);
@@ -51,7 +47,7 @@ namespace Platform_Creator_CS.Entities.Containers {
                     }
                 }
                 
-                RemoveEntities.RemoveAll(e => {
+                _removeEntities.RemoveAll(e => {
                     OnRemoveEntity?.Invoke(e);
                     Entities.Remove(e);
                     e.Container = null;

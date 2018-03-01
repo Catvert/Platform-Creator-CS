@@ -1,75 +1,37 @@
 using System;
 using System.Collections.Generic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using MonoGame.Extended.Tweening;
-using Platform_Creator_CS.Utility;
 using System.Linq;
 using ImGuiNET;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Platform_Creator_CS.Sources.Utilities;
+using Platform_Creator_CS.Utility;
+using IUpdateable = Platform_Creator_CS.Utility.IUpdateable;
 
 namespace Platform_Creator_CS.Scenes {
-    public class SceneManager : IRenderable, Utility.IUpdateable, IDisposable {
-        private class NextWaitingScene {
-            public Scene Scene { get; }
-            public bool ApplyTransition { get; }
-            public bool DisposeCurrentScene { get; }
+    public sealed class SceneManager : IRenderable, IUpdateable, IResizable, IDisposable {
+        private readonly Dictionary<Type, NextWaitingScene> _waitingScenes = new Dictionary<Type, NextWaitingScene>();
 
-            public NextWaitingScene(Scene scene, bool applyTransition, bool disposeCurrentScene) {
-                Scene = scene;
-                ApplyTransition = applyTransition;
-                DisposeCurrentScene = disposeCurrentScene;
-            }
-        }
-        public Scene CurrentScene { get; private set; }
+        private float _elapsedTime;
 
-        private NextWaitingScene _nextScene = null;
+        private bool _isTransitionRuning;
 
-        private Dictionary<Type, NextWaitingScene> _waitingScenes = new Dictionary<Type, NextWaitingScene>();
+        private NextWaitingScene _nextScene;
 
-        private bool _isTransitionRuning = false;
-
-        private float _elapsedTime = 0f;
-
-        private float _progress = 0f;
+        private float _progress;
 
         public SceneManager(Scene initialScene) {
             CurrentScene = initialScene;
         }
 
-        public void LoadScene(Scene scene, bool applyTransition, bool disposeCurrentScene) {
-            var nextWaitingScene = new NextWaitingScene(scene, applyTransition, disposeCurrentScene);
+        public Scene CurrentScene { get; private set; }
 
-            if (_isTransitionRuning) {
-                _waitingScenes[scene.GetType()] = nextWaitingScene;
-            }
-
-            if (applyTransition) {
-                if(_isTransitionRuning)
-                    return;
-
-                _elapsedTime = 0f;
-
-                _progress = 0f;
-
-                _nextScene = nextWaitingScene;
-
-                _isTransitionRuning = true;
-            } else {
-                if(!_isTransitionRuning)
-                    SetScene(scene, disposeCurrentScene);
-            }
-        }
-
-        private void SetScene(Scene scene, bool disposeCurrentScene) {
-            if(disposeCurrentScene)
-                CurrentScene.Dispose();
-
-            Log.Info($"Chargement de la scène : {scene.GetType().Name}");
-            CurrentScene = scene;
+        public void Dispose() {
+            CurrentScene.Dispose();
         }
 
         public void Render(SpriteBatch batch, float alpha) {
-            PCGame.Graphics.GraphicsDevice.Clear(_nextScene != null ? _nextScene.Scene.BackgroundColor : CurrentScene.BackgroundColor);
+            PCGame.Graphics.GraphicsDevice.Clear(_nextScene?.Scene.BackgroundColor ?? CurrentScene.BackgroundColor);
 
             ImGui.NewFrame();
 
@@ -79,7 +41,7 @@ namespace Platform_Creator_CS.Scenes {
 
             PCGame.ImGuiMG.Draw();
 
-            if(_nextScene != null) {
+            if (_nextScene != null) {
                 ImGui.NewFrame();
 
                 ImGui.GetStyle().Alpha = _progress;
@@ -91,7 +53,7 @@ namespace Platform_Creator_CS.Scenes {
         }
 
         public void Update(GameTime gameTime) {
-            if(_nextScene != null && _isTransitionRuning) {
+            if (_nextScene != null && _isTransitionRuning) {
                 _elapsedTime += gameTime.ElapsedGameTime.Milliseconds / 1000f;
 
                 var nextScene = _nextScene.Scene;
@@ -100,27 +62,73 @@ namespace Platform_Creator_CS.Scenes {
 
                 nextScene.Update(gameTime);
 
-                if(_progress == 1f) {
+                if (_progress == 1f) {
                     SetScene(nextScene, _nextScene.DisposeCurrentScene);
 
                     _nextScene = null;
                     _isTransitionRuning = false;
 
-                    if(_waitingScenes.Count > 0) {
+                    if (_waitingScenes.Count > 0) {
                         var scene = _waitingScenes.ElementAt(0);
                         _waitingScenes.Remove(scene.Key);
                         LoadScene(scene.Value.Scene, scene.Value.ApplyTransition, scene.Value.DisposeCurrentScene);
                     }
-                    else
+                    else {
                         _progress = 0f;
+                    }
                 }
             }
-            else
+            else {
                 CurrentScene.Update(gameTime);
+            }
         }
 
-        public void Dispose() {
-            CurrentScene.Dispose();
+        public void LoadScene(Scene scene, bool applyTransition, bool disposeCurrentScene) {
+            var nextWaitingScene = new NextWaitingScene(scene, applyTransition, disposeCurrentScene);
+
+            if (_isTransitionRuning) _waitingScenes[scene.GetType()] = nextWaitingScene;
+
+            if (applyTransition) {
+                if (_isTransitionRuning)
+                    return;
+
+                _elapsedTime = 0f;
+
+                _progress = 0f;
+
+                _nextScene = nextWaitingScene;
+
+                _isTransitionRuning = true;
+            }
+            else {
+                if (!_isTransitionRuning)
+                    SetScene(scene, disposeCurrentScene);
+            }
+        }
+
+        private void SetScene(Scene scene, bool disposeCurrentScene) {
+            if (disposeCurrentScene)
+                CurrentScene.Dispose();
+
+            Log.Info($"Chargement de la scène : {scene.GetType().Name}");
+            CurrentScene = scene;
+        }
+
+        private class NextWaitingScene {
+            public NextWaitingScene(Scene scene, bool applyTransition, bool disposeCurrentScene) {
+                Scene = scene;
+                ApplyTransition = applyTransition;
+                DisposeCurrentScene = disposeCurrentScene;
+            }
+
+            public Scene Scene { get; }
+            public bool ApplyTransition { get; }
+            public bool DisposeCurrentScene { get; }
+        }
+
+        public void Resize(Size newSize) {
+            CurrentScene.Resize(newSize);
+            _nextScene?.Scene.Resize(newSize);
         }
     }
 }

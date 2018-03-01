@@ -6,7 +6,7 @@ namespace Platform_Creator_CS.Utility {
     public static class ImGuiHelper {
         public static void WithCenteredWindow(string windowTitle, Vector2 windowSize, Condition centerCond, WindowFlags flags, Action block) {
             ImGui.SetNextWindowSize(windowSize, centerCond);
-            ImGui.SetNextWindowPos(new Vector2(PCGame.ScreenSize.X / 2 - windowSize.X / 2, PCGame.ScreenSize.Y / 2 - windowSize.Y / 2), centerCond, new Vector2());
+            ImGui.SetNextWindowPos(new Vector2(PCGame.ScreenSize.X / 2f - windowSize.X / 2f, PCGame.ScreenSize.Y / 2f - windowSize.Y / 2f), centerCond, new Vector2());
             
             ImGui.BeginWindow(windowTitle, flags);
             

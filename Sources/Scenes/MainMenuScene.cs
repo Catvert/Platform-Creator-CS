@@ -6,8 +6,10 @@ using Platform_Creator_CS.Utility;
 using Vec2 = System.Numerics.Vector2;
 
 namespace Platform_Creator_CS.Scenes {
-    public class MainMenuScene : Scene {
-        public MainMenuScene() : base(PCGame.MainBackground) {}
+    public sealed class MainMenuScene : Scene {
+        public MainMenuScene() : base(PCGame.MainBackground) {
+            PCGame.AddLogoMenu(EntityContainer);
+        }
 
         public override void Render(SpriteBatch batch, float alpha) {
             base.Render(batch, alpha);

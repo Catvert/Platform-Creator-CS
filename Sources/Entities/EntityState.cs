@@ -11,11 +11,11 @@ using System.Linq;
 namespace Platform_Creator_CS.Entities {
     public class EntityState : Utility.IUpdateable, IRenderable
     {
-        private List<Component> _components = new List<Component>();
+        private readonly List<Component> _components = new List<Component>();
 
         private Entity _entity;
 
-        private bool _active = false;
+        private bool _active;
 
         public string Name { get; set; }
 
@@ -23,8 +23,11 @@ namespace Platform_Creator_CS.Entities {
         
         public IEnumerable<Component> GetComponents() => _components;
 
-        public EntityState(string name) {
+        public EntityState(string name, params Component[] components) {
             Name = name;
+
+            foreach(var comp in components)
+                AddComponent(comp);
         }
         
         public void ToggleActive(Entity entity, EntityContainer container, bool triggerStartAction) {
@@ -35,6 +38,8 @@ namespace Platform_Creator_CS.Entities {
             if(triggerStartAction)
                 StartAction.Invoke(entity);
 
+            _entity = entity;
+
             _active = true;
         }
 
@@ -43,7 +48,7 @@ namespace Platform_Creator_CS.Entities {
         }
 
         public void AddComponent(Component component) {
-            if(!_components.Any(c => c.GetType() == component.GetType())) {
+            if(_components.All(c => c.GetType() != component.GetType())) {
                 _components.Add(component);
 
                 if(_active)

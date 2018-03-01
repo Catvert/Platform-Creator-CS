@@ -22,7 +22,8 @@ namespace Platform_Creator_CS.Utility {
 
     public class StandardBackground : Background {
         public string BackgroundFile { get;}
-        private Texture2D _backgroundTexture;
+        private readonly Texture2D _backgroundTexture;
+
         public StandardBackground(string file) : base(BackgroundType.Standard) {
             BackgroundFile = file;
             _backgroundTexture = ResourceManager.GetTexture(file);
