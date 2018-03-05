@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/Finch-VM/Desktop/Platform Creator CS/Platform Creator CS/Content/GeonBit.UI/themes/editor/styles/ProgressBar-MouseHover.xml</SourceFile>
+  <SourceTime>2018-03-05T17:06:42.4683668+01:00</SourceTime>
+  <DestFile>C:/Users/Finch-VM/Desktop/Platform Creator CS/Platform Creator CS/Content/bin/DesktopGL/GeonBit.UI/themes/editor/styles/ProgressBar-MouseHover.xnb</DestFile>
+  <DestTime>2018-03-05T17:13:56.9072153+01:00</DestTime>
+  <Importer>XmlImporter</Importer>
+  <ImporterTime>2018-03-04T13:32:26+01:00</ImporterTime>
+  <Processor>PassThroughProcessor</Processor>
+  <ProcessorTime>2018-03-04T13:32:26+01:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
