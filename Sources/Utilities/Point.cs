@@ -10,6 +10,12 @@ namespace Platform_Creator_CS.Utility {
             Y = y;
         }
 
-        public Vector2 ToVector2() => new Vector2(X, Y);
+        public Vector2 ToVector2() {
+            return new Vector2(X, Y);
+        }
+
+        public bool EqualsEpsilon(Point compare, float epsilon) {
+            return X.EqualsEpsilon(compare.X, epsilon) && Y.EqualsEpsilon(compare.Y, epsilon);
+        }
     }
 }

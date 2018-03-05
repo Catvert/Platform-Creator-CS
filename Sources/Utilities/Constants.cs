@@ -1,4 +1,4 @@
-using System.IO;
+using System.Numerics;
 
 namespace Platform_Creator_CS.Utility {
     public static class Constants {
@@ -48,9 +48,13 @@ namespace Platform_Creator_CS.Utility {
 
         public const string PrefabExtension = "prefab";
         public const string LevelExtension = "pclvl";
-        public static string[] LevelTextureExtension = { "jpg", "png" };
-        public static string[] LevelAtlasExtension = { "atlas" };
-        public static string[] LevelSoundExtension = { "mp3", "wav", "ogg" };
-        public static string[] LevelScriptExtension = { "js" };
+        public static string[] LevelTextureExtension = {"jpg", "png"};
+        public static string[] LevelSheetExtension = {"atlas"};
+        public static string[] LevelSoundExtension = {"mp3", "wav", "ogg"};
+        public static string[] LevelScriptExtension = {"js"};
+
+        public static string LevelDataFile = $"data.{LevelExtension}";
+
+        public static Vector2 DefaultItemWidth = new Vector2(DefaultWidgetsWidth, 0f);
     }
 }

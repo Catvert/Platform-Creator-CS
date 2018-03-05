@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Platform_Creator_CS.Serialization {
     public static class SerializationFactory {
-        private static readonly JsonSerializerSettings JsonSettings = new JsonSerializerSettings() {
+        private static readonly JsonSerializerSettings JsonSettings = new JsonSerializerSettings {
             TypeNameHandling = TypeNameHandling.Auto,
             TypeNameAssemblyFormatHandling = TypeNameAssemblyFormatHandling.Simple,
             Formatting = Formatting.Indented
@@ -17,8 +17,10 @@ namespace Platform_Creator_CS.Serialization {
             return (T) JsonConvert.DeserializeObject(json, typeof(T), JsonSettings);
         }
 
-        public static T Copy<T>(T copy) => Deserialize<T>(Serialize(copy));
-       
+        public static T Copy<T>(T copy) {
+            return Deserialize<T>(Serialize(copy));
+        }
+
         public static void SerializeToFile(object o, string file) {
             using (var fs = new StreamWriter(file, false)) {
                 fs.Write(Serialize(o));

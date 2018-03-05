@@ -3,9 +3,11 @@ using System.IO;
 
 namespace Platform_Creator_CS {
     public static class Log {
-        private static TextWriter _fs = File.CreateText("last_log.txt");
+        private static readonly TextWriter Fs = File.CreateText("last_log.txt");
 
-        private static string Suffix() => DateTime.Now.ToLongTimeString();
+        private static string Suffix() {
+            return DateTime.Now.ToLongTimeString();
+        }
 
         public static void Info(string message) {
             Write("INFO", message);
@@ -26,11 +28,12 @@ namespace Platform_Creator_CS {
         private static void Write(string type, string message) {
             var msg = $"{Suffix()} [{type}] -> {message}";
 
-            _fs.WriteLine(msg);
+            Fs.WriteLine(msg);
             Console.WriteLine(msg);
         }
+
         public static void Dispose() {
-            _fs.Dispose();
+            Fs.Dispose();
         }
     }
 }

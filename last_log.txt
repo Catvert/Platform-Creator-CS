@@ -1,2 +1,0 @@
-21:12:14 [INFO] -> Initialisation en cours .. 
- Taille : 1472x728

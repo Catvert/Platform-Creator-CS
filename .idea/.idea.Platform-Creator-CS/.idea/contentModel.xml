@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2018.1/system/resharper-host/local/Transient/ReSharperHost/v12/SolutionCaches/_Platform-Creator-CS.-542125870.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assets" t="Include">
+        <e p="backgrounds" t="Include">
+          <e p="parallax" t="Include">
+            <e p="Background 1" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="2.png" t="Include" />
+              <e p="3.png" t="Include" />
+              <e p="4.png" t="Include" />
+              <e p="parallax.data" t="Include" />
+            </e>
+            <e p="Background 2" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="10.png" t="Include" />
+              <e p="11.png" t="Include" />
+              <e p="2.png" t="Include" />
+              <e p="3.png" t="Include" />
+              <e p="4.png" t="Include" />
+              <e p="5.png" t="Include" />
+              <e p="6.png" t="Include" />
+              <e p="7.png" t="Include" />
+              <e p="8.png" t="Include" />
+              <e p="9.png" t="Include" />
+              <e p="parallax.data" t="Include" />
+            </e>
+            <e p="Background 3" t="Include">
+              <e p="1.png" t="Include" />
+              <e p="2.png" t="Include" />
+              <e p="3.png" t="Include" />
+              <e p="4.png" t="Include" />
+              <e p="parallax.data" t="Include" />
+            </e>
+          </e>
+          <e p="standard" t="Include">
+            <e p="1.png" t="Include" />
+            <e p="2.png" t="Include" />
+            <e p="3.png" t="Include" />
+            <e p="4.png" t="Include" />
+            <e p="5.png" t="Include" />
+            <e p="blue_hills_1.png" t="Include" />
+            <e p="blue_waterhills_1.png" t="Include" />
+            <e p="green_hills_2.png" t="Include" />
+            <e p="green_junglehills.png" t="Include" />
+          </e>
+        </e>
+        <e p="config.json" t="Include" />
+        <e p="fonts" t="Include">
+          <e p="editorFont.fnt" t="Include" />
+          <e p="editorFont.png" t="Include" />
+          <e p="imgui.ttf" t="Include" />
+          <e p="mainFont.fnt" t="Include" />
+          <e p="mainFont.png" t="Include" />
+        </e>
+        <e p="game" t="Include">
+          <e p="game-over-fail.wav" t="Include" />
+          <e p="game-over-success.wav" t="Include" />
+          <e p="logo.png" t="Include" />
+          <e p="mainmenu.png" t="Include" />
+          <e p="mainmusic.ogg" t="Include" />
+          <e p="nosound.wav" t="Include" />
+          <e p="tick.mp3" t="Include" />
+        </e>
+        <e p="i18n_bundles" t="Include">
+          <e p="editor" t="Include">
+            <e p="bundle.properties" t="Include" />
+          </e>
+          <e p="game" t="Include">
+            <e p="bundle.properties" t="Include" />
+          </e>
+          <e p="menus" t="Include">
+            <e p="bundle.properties" t="Include" />
+            <e p="bundle_en.properties" t="Include" />
+          </e>
+        </e>
+        <e p="icon.png" t="Include" />
+        <e p="keysConfig.json" t="Include" />
+        <e p="packs" t="Include">
+          <e p="kenney" t="Include">
+            <e p="abstract_platform.atlas" t="Include" />
+            <e p="abstract_platform.png" t="Include" />
+            <e p="aliens.atlas" t="Include" />
+            <e p="aliens.png" t="Include" />
+            <e p="aliens_rect.atlas" t="Include" />
+            <e p="aliens_rect.png" t="Include" />
+            <e p="cakeSheet.atlas" t="Include" />
+            <e p="cakeSheet.png" t="Include" />
+            <e p="castleSheet.atlas" t="Include" />
+            <e p="castleSheet.png" t="Include" />
+            <e p="chocoSheet.atlas" t="Include" />
+            <e p="chocoSheet.png" t="Include" />
+            <e p="dirtSheet.atlas" t="Include" />
+            <e p="dirtSheet.png" t="Include" />
+            <e p="elements.atlas" t="Include" />
+            <e p="elements.png" t="Include" />
+            <e p="enemies.atlas" t="Include" />
+            <e p="enemies.png" t="Include" />
+            <e p="foliagePack_default.atlas" t="Include" />
+            <e p="foliagePack_default.png" t="Include" />
+            <e p="foliagePack_retina.atlas" t="Include" />
+            <e p="foliagePack_retina.png" t="Include" />
+            <e p="grassSheet.atlas" t="Include" />
+            <e p="grassSheet.png" t="Include" />
+            <e p="jumper.atlas" t="Include" />
+            <e p="jumper.png" t="Include" />
+            <e p="medieval.atlas" t="Include" />
+            <e p="medieval.png" t="Include" />
+            <e p="metalSheet.atlas" t="Include" />
+            <e p="metalSheet.png" t="Include" />
+            <e p="purpleSheet.atlas" t="Include" />
+            <e p="purpleSheet.png" t="Include" />
+            <e p="sandSheet.atlas" t="Include" />
+            <e p="sandSheet.png" t="Include" />
+            <e p="snowSheet.atlas" t="Include" />
+            <e p="snowSheet.png" t="Include" />
+            <e p="tundraSheet.atlas" t="Include" />
+            <e p="tundraSheet.png" t="Include" />
+          </e>
+          <e p="smc" t="Include">
+            <e p="animations.atlas" t="Include" />
+            <e p="animations.png" t="Include" />
+            <e p="blocks.atlas" t="Include" />
+            <e p="blocks.png" t="Include" />
+            <e p="blocks2.png" t="Include" />
+            <e p="blocks3.png" t="Include" />
+            <e p="box.atlas" t="Include" />
+            <e p="box.png" t="Include" />
+            <e p="enemies.atlas" t="Include" />
+            <e p="enemies.png" t="Include" />
+            <e p="enemies2.png" t="Include" />
+            <e p="grounds.atlas" t="Include" />
+            <e p="grounds.png" t="Include" />
+            <e p="grounds2.png" t="Include" />
+            <e p="grounds3.png" t="Include" />
+            <e p="grounds4.png" t="Include" />
+            <e p="grounds5.png" t="Include" />
+            <e p="grounds6.png" t="Include" />
+            <e p="grounds7.png" t="Include" />
+            <e p="grounds8.png" t="Include" />
+            <e p="grounds9.png" t="Include" />
+            <e p="items.atlas" t="Include" />
+            <e p="items.png" t="Include" />
+            <e p="maryo.atlas" t="Include" />
+            <e p="maryo.png" t="Include" />
+            <e p="maryo2.png" t="Include" />
+            <e p="maryo3.png" t="Include" />
+            <e p="maryo4.png" t="Include" />
+            <e p="pipes.atlas" t="Include" />
+            <e p="pipes.png" t="Include" />
+            <e p="signs.atlas" t="Include" />
+            <e p="signs.png" t="Include" />
+          </e>
+        </e>
+        <e p="particles" t="Include">
+          <e p="star" t="Include" />
+        </e>
+        <e p="sounds" t="Include">
+          <e p="coin.wav" t="Include" />
+          <e p="enemy" t="Include">
+            <e p="die.wav" t="Include" />
+          </e>
+          <e p="music" t="Include">
+            <e p="game" t="Include">
+              <e p="bossbattle_1.ogg" t="Include" />
+              <e p="bossbattle_1.txt" t="Include" />
+              <e p="bossbattle_3.ogg" t="Include" />
+              <e p="bossbattle_3.txt" t="Include" />
+              <e p="courseclear.ogg" t="Include" />
+              <e p="courseclear.txt" t="Include" />
+              <e p="lost_1.ogg" t="Include" />
+              <e p="lost_1.txt" t="Include" />
+              <e p="menu.ogg" t="Include" />
+              <e p="menu.txt" t="Include" />
+              <e p="star.ogg" t="Include" />
+              <e p="star.txt" t="Include" />
+            </e>
+            <e p="land" t="Include">
+              <e p="cave_1.ogg" t="Include" />
+              <e p="cave_1.txt" t="Include" />
+              <e p="cave_2.ogg" t="Include" />
+              <e p="cave_2.txt" t="Include" />
+              <e p="cave_3.ogg" t="Include" />
+              <e p="cave_3.txt" t="Include" />
+              <e p="hyper_1.ogg" t="Include" />
+              <e p="hyper_1.txt" t="Include" />
+              <e p="jungle_1.ogg" t="Include" />
+              <e p="jungle_1.txt" t="Include" />
+              <e p="land_1.ogg" t="Include" />
+              <e p="land_1.txt" t="Include" />
+              <e p="land_2.ogg" t="Include" />
+              <e p="land_2.txt" t="Include" />
+              <e p="land_3.ogg" t="Include" />
+              <e p="land_3.txt" t="Include" />
+              <e p="land_4.ogg" t="Include" />
+              <e p="land_4.txt" t="Include" />
+              <e p="land_5.ogg" t="Include" />
+              <e p="land_5.txt" t="Include" />
+              <e p="snow_1.ogg" t="Include" />
+              <e p="snow_1.txt" t="Include" />
+              <e p="water_1.ogg" t="Include" />
+              <e p="water_1.txt" t="Include" />
+              <e p="waterway_1.ogg" t="Include" />
+              <e p="waterway_1.txt" t="Include" />
+            </e>
+            <e p="overworld" t="Include">
+              <e p="bonus_1.ogg" t="Include" />
+              <e p="bonus_1.txt" t="Include" />
+              <e p="land_1.ogg" t="Include" />
+              <e p="land_1.txt" t="Include" />
+              <e p="land_2.ogg" t="Include" />
+              <e p="land_2.txt" t="Include" />
+            </e>
+            <e p="story" t="Include">
+              <e p="default_story_1.ogg" t="Include" />
+              <e p="default_story_1.txt" t="Include" />
+            </e>
+          </e>
+          <e p="player" t="Include">
+            <e p="jump.ogg" t="Include" />
+          </e>
+        </e>
+        <e p="ui" t="Include">
+          <e p="fav.png" t="Include" />
+          <e p="settings.png" t="Include" />
+        </e>
+      </e>
+      <e p="Content" t="Include">
+        <e p="Content.mgcb" t="Include" />
+      </e>
+      <e p="LICENSE.md" t="Include" />
+      <e p="Platform-Creator-CS.csproj" t="IncludeRecursive" />
+      <e p="Platform-Creator-CS.sln" t="IncludeFlat" />
+      <e p="README.md" t="Include" />
+      <e p="Sources" t="Include">
+        <e p="Entities" t="Include">
+          <e p="Actions" t="Include">
+            <e p="Action.cs" t="Include" />
+            <e p="EmptyAction.cs" t="Include" />
+            <e p="MoveAction.cs" t="Include" />
+            <e p="PhysicsAction.cs" t="Include" />
+            <e p="RemoveEntityAction.cs" t="Include" />
+          </e>
+          <e p="Components" t="Include">
+            <e p="Component.cs" t="Include" />
+            <e p="InputComponent.cs" t="Include" />
+            <e p="PhysicsComponent.cs" t="Include" />
+            <e p="TextureComponent.cs" t="Include" />
+          </e>
+          <e p="Containers" t="Include">
+            <e p="EntityContainer.cs" t="Include" />
+            <e p="EntityMatrixContainer.cs" t="Include" />
+            <e p="Level.cs" t="Include" />
+          </e>
+          <e p="Entity.cs" t="Include" />
+          <e p="EntityState.cs" t="Include" />
+          <e p="Tags.cs" t="Include" />
+        </e>
+        <e p="GameKeys.cs" t="Include" />
+        <e p="ImGuiMG.cs" t="Include" />
+        <e p="Log.cs" t="Include" />
+        <e p="Managers" t="Include">
+          <e p="ResourceManager.cs" t="Include" />
+        </e>
+        <e p="PCGame.cs" t="Include" />
+        <e p="Program.cs" t="Include" />
+        <e p="Scenes" t="Include">
+          <e p="EditorScene.cs" t="Include" />
+          <e p="EndLevelScene.cs" t="Include" />
+          <e p="GameScene.cs" t="Include" />
+          <e p="MainMenuScene.cs" t="Include" />
+          <e p="Scene.cs" t="Include" />
+          <e p="SceneManager.cs" t="Include" />
+        </e>
+        <e p="Serialization" t="Include">
+          <e p="SerializationFactory.cs" t="Include" />
+        </e>
+        <e p="Utilities" t="Include">
+          <e p="Background.cs" t="Include" />
+          <e p="BoxSide.cs" t="Include" />
+          <e p="Constants.cs" t="Include" />
+          <e p="Extensions.cs" t="Include" />
+          <e p="GridCell.cs" t="Include" />
+          <e p="IRenderable.cs" t="Include" />
+          <e p="IResizable.cs" t="Include" />
+          <e p="IUpdateable.cs" t="Include" />
+          <e p="ImGuiHelper.cs" t="Include" />
+          <e p="Point.cs" t="Include" />
+          <e p="Rect.cs" t="Include" />
+          <e p="Size.cs" t="Include" />
+          <e p="SpriteSheet.cs" t="Include" />
+          <e p="SpriteSheetLoader.cs" t="Include" />
+          <e p="TextureRegion.cs" t="Include" />
+          <e p="Utility.cs" t="Include" />
+        </e>
+      </e>
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="imgui.ini" t="Include" />
+      <e p="last_log.txt" t="Include" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp2.0" t="Include">
+            <e p="Platform-Creator-CS.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

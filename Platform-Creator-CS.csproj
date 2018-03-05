@@ -6,13 +6,22 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
   <ItemGroup>
     <MonoGameContentReference Include="**\*.mgcb" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CS-Script.Core" Version="1.0.0.2" />
+    <PackageReference Include="FastMember.NetCore" Version="1.1.0" />
     <PackageReference Include="ImGui.NET" Version="0.4.3" />
-    <PackageReference Include="Jint" Version="2.11.58" />
     <PackageReference Include="MonoGame.Content.Builder" Version="3.7.0.4" />
     <PackageReference Include="Monogame.Extended" Version="1.0.617" />
     <PackageReference Include="Monogame.Extended.Graphics" Version="1.0.617" />

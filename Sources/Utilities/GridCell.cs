@@ -1,5 +1,3 @@
-using Newtonsoft.Json;
-
 namespace Platform_Creator_CS.Utility {
     public struct GridCell {
         public int X { get; }

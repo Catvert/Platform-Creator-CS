@@ -10,14 +10,16 @@ using Platform_Creator_CS.Utility;
 using Point = Platform_Creator_CS.Utility.Point;
 
 namespace Platform_Creator_CS.Entities.Containers {
-    public class EntityMatrixContainer : EntityContainer {
-        private List<Entity>[,] _matrixGrid;
+    public abstract class EntityMatrixContainer : EntityContainer {
+        private List<Entity>[][] _matrixGrid;
 
         private int _matrixHeight = Constants.MinMatrixSize;
         private int _matrixWidth = Constants.MinMatrixSize;
 
         public EntityMatrixContainer() {
-            _matrixGrid = new List<Entity>[_matrixWidth, _matrixHeight];
+            _matrixGrid = new List<Entity>[_matrixWidth][];
+            for (var i = 0; i < _matrixWidth; ++i)
+                _matrixGrid[i] = new List<Entity>[_matrixHeight];
 
             AllocateMatrix();
 
@@ -28,20 +30,23 @@ namespace Platform_Creator_CS.Entities.Containers {
 
             OnRemoveEntity = entity => {
                 foreach (var cell in entity.GridCells)
-                    _matrixGrid[cell.X, cell.Y].Remove(entity);
+                    _matrixGrid[cell.X][cell.Y].Remove(entity);
                 entity.GridCells.Clear();
             };
         }
 
-        [JsonIgnore] public Rect MatrixRect { get; set; }
+        [JsonIgnore]
+        public Rect MatrixRect { get; set; }
 
         [JsonIgnore]
         public Rect ActiveRect { get; set; } =
             new Rect(0f, 0f, Constants.ViewportRatioWidth, Constants.ViewportRatioHeight);
 
-        [JsonIgnore] public IEnumerable<GridCell> ActiveGridCells { get; private set; }
+        [JsonIgnore]
+        public IEnumerable<GridCell> ActiveGridCells { get; private set; }
 
-        [JsonIgnore] public bool DrawDebugRects { get; set; } = true;
+        [JsonIgnore]
+        public bool DrawDebugRects { get; set; } = true;
 
         public Entity FollowEntity { get; set; } = null;
 
@@ -94,8 +99,8 @@ namespace Platform_Creator_CS.Entities.Containers {
                 ActiveRect.Position = new Point(
                     Math.Clamp(FollowEntity.Box.Center().X - ActiveRect.Size.Width / 2f, MatrixRect.Left(),
                         Math.Max(0f, MatrixRect.Right() - ActiveRect.Size.Width)),
-                    Math.Clamp(FollowEntity.Box.Center().Y - ActiveRect.Size.Height / 2f, MatrixRect.Bottom(),
-                        Math.Max(0f, MatrixRect.Top() - ActiveRect.Size.Height))
+                    Math.Clamp(FollowEntity.Box.Center().Y - ActiveRect.Size.Height / 2f, MatrixRect.Top(),
+                        Math.Max(0f, MatrixRect.Bottom() - ActiveRect.Size.Height))
                 );
 
             base.Update(gameTime);
@@ -110,17 +115,22 @@ namespace Platform_Creator_CS.Entities.Containers {
         public IEnumerable<Entity> GetAllEntitiesInCells(IEnumerable<GridCell> cells) {
             var entities = new List<Entity>();
 
-            foreach (var cell in cells) entities.AddRange(_matrixGrid[cell.X, cell.Y]);
+            foreach (var cell in cells) entities.AddRange(_matrixGrid[cell.X][cell.Y]);
 
-            return entities;
+            return entities.ToHashSet();
         }
 
-        public IEnumerable<Entity> GetAllEntitiesInCells(Rect rect) => GetAllEntitiesInCells(GetCellsInRect(rect));
+        public IEnumerable<Entity> GetAllEntitiesInCells(Rect rect) {
+            return GetAllEntitiesInCells(GetCellsInRect(rect));
+        }
 
         [OnDeserialized]
-        private void OnDeserialized(StreamingContext context) {
+        protected void OnDeserialized(StreamingContext context) {
             foreach (var entity in Entities) {
                 PlaceEntityInMatrix(entity);
+
+                // TODO workaround
+                entity.Container = this;
 
                 entity.Box.OnChangedEventHandler += rect => PlaceEntityInMatrix(entity);
             }
@@ -129,8 +139,8 @@ namespace Platform_Creator_CS.Entities.Containers {
         private void AllocateMatrix() {
             for (var x = 0; x < _matrixWidth; ++x)
             for (var y = 0; y < _matrixHeight; ++y)
-                if (_matrixGrid[x, y] == null)
-                    _matrixGrid[x, y] = new List<Entity>();
+                if (_matrixGrid[x][y] == null)
+                    _matrixGrid[x][y] = new List<Entity>();
         }
 
         private void UpdateActiveCells() {
@@ -152,12 +162,12 @@ namespace Platform_Creator_CS.Entities.Containers {
         }
 
         private void PlaceEntityInMatrix(Entity entity) {
-            foreach (var cell in entity.GridCells) _matrixGrid[cell.X, cell.Y].Remove(entity);
+            foreach (var cell in entity.GridCells) _matrixGrid[cell.X][cell.Y].Remove(entity);
 
             entity.GridCells.Clear();
 
             foreach (var cell in GetCellsInRect(entity.Box)) {
-                _matrixGrid[cell.X, cell.Y].Add(entity);
+                _matrixGrid[cell.X][cell.Y].Add(entity);
                 entity.GridCells.Add(cell);
             }
         }
@@ -179,8 +189,8 @@ namespace Platform_Creator_CS.Entities.Containers {
             }
 
             if (MatrixRect.Overlaps(rect)) {
-                var x = Math.Max(0, (int) Math.Round(rect.Position.X) / Constants.MatrixCellSize);
-                var y = Math.Max(0, (int) Math.Round(rect.Position.Y) / Constants.MatrixCellSize);
+                var x = Math.Max(0, rect.Position.X.Round() / Constants.MatrixCellSize);
+                var y = Math.Max(0, rect.Position.Y.Round() / Constants.MatrixCellSize);
 
                 var cell = new GridCell(x, y);
                 if (RectContainsCell(cell)) {

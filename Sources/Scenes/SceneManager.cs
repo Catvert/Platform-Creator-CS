@@ -4,7 +4,7 @@ using System.Linq;
 using ImGuiNET;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Platform_Creator_CS.Sources.Utilities;
+using Platform_Creator_CS.Utilities;
 using Platform_Creator_CS.Utility;
 using IUpdateable = Platform_Creator_CS.Utility.IUpdateable;
 
@@ -50,6 +50,11 @@ namespace Platform_Creator_CS.Scenes {
 
                 PCGame.ImGuiMG.Draw();
             }
+        }
+
+        public void Resize(Size newSize) {
+            CurrentScene.Resize(newSize);
+            _nextScene?.Scene.Resize(newSize);
         }
 
         public void Update(GameTime gameTime) {
@@ -124,11 +129,6 @@ namespace Platform_Creator_CS.Scenes {
             public Scene Scene { get; }
             public bool ApplyTransition { get; }
             public bool DisposeCurrentScene { get; }
-        }
-
-        public void Resize(Size newSize) {
-            CurrentScene.Resize(newSize);
-            _nextScene?.Scene.Resize(newSize);
         }
     }
 }

@@ -2,14 +2,18 @@ using System.Collections.Generic;
 
 namespace Platform_Creator_CS.Utility {
     public class SpriteSheet {
-        private readonly Dictionary<string, SpriteFrame> _spriteFrames = new Dictionary<string, SpriteFrame>();
+        private readonly Dictionary<string, TextureRegion> _regions = new Dictionary<string, TextureRegion>();
 
-        public void Add(string name, SpriteFrame frame) {
-            _spriteFrames[name] = frame;
+        public void Add(string name, TextureRegion frame) {
+            _regions[name] = frame;
         }
 
-        public SpriteFrame GetFrame(string name) => _spriteFrames[name];
+        public TextureRegion GetRegion(string name) {
+            return _regions[name];
+        }
 
-        public IEnumerable<SpriteFrame> GetFrames() => _spriteFrames.Values;
+        public IEnumerable<TextureRegion> GetRegions() {
+            return _regions.Values;
+        }
     }
 }

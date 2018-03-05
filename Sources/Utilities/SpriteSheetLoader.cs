@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -9,7 +8,7 @@ namespace Platform_Creator_CS.Utility {
         public static SpriteSheet Load(string file) {
             var sheet = new SpriteSheet();
 
-            using(var reader = File.OpenText(file)) {
+            using (var reader = File.OpenText(file)) {
                 while (true) {
                     var firstLine = reader.ReadLine();
 
@@ -40,7 +39,7 @@ namespace Platform_Creator_CS.Utility {
             return sheet;
         }
 
-        private static(string, SpriteFrame) LoadRegion(StreamReader reader, string regionName, Texture2D texture) {
+        private static (string, TextureRegion) LoadRegion(StreamReader reader, string regionName, Texture2D texture) {
             var rotate = reader.ReadLine();
             var xy = ReadPoint(reader.ReadLine());
             var size = ReadSize(reader.ReadLine());
@@ -48,23 +47,24 @@ namespace Platform_Creator_CS.Utility {
             var offset = reader.ReadLine();
             var index = reader.ReadLine();
 
-            return (regionName, new SpriteFrame(texture, new Rectangle((int) xy.X, (int) xy.Y, size.Width, size.Height)));
+            return (regionName,
+                new TextureRegion(texture, new Rectangle((int) xy.X, (int) xy.Y, size.Width, size.Height)));
         }
 
         private static bool ReadBool(string line) {
-            var value = line.Trim().Split(':') [1].Trim();
+            var value = line.Trim().Split(':')[1].Trim();
             return bool.Parse(value);
         }
 
         private static Point ReadPoint(string line) {
-            var value = line.Trim().Split(':') [1].Trim();
+            var value = line.Trim().Split(':')[1].Trim();
             var xy = value.Split(',');
 
             return new Point(float.Parse(xy[0].Trim()), float.Parse(xy[1].Trim()));
         }
 
         private static Size ReadSize(string line) {
-            var value = line.Trim().Split(':') [1].Trim();
+            var value = line.Trim().Split(':')[1].Trim();
             var xy = value.Split(',');
 
             return new Size(int.Parse(xy[0].Trim()), int.Parse(xy[1].Trim()));

@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
 using Platform_Creator_CS.Entities.Containers;
-using Platform_Creator_CS.Sources.Utilities;
+using Platform_Creator_CS.Utilities;
 using Platform_Creator_CS.Utility;
 using IUpdateable = Platform_Creator_CS.Utility.IUpdateable;
 
@@ -24,7 +24,6 @@ namespace Platform_Creator_CS.Scenes {
         protected Background Background { get; set; }
 
         public virtual void Dispose() { }
-        public virtual void Resize(Size newSize) { }
 
         public virtual void Render(SpriteBatch batch, float alpha) {
             batch.Begin(blendState: BlendState.NonPremultiplied);
@@ -37,6 +36,8 @@ namespace Platform_Creator_CS.Scenes {
             EntityContainer.Render(batch, alpha);
             batch.End();
         }
+
+        public virtual void Resize(Size newSize) { }
 
         public virtual void Update(GameTime gameTime) {
             EntityContainer.Update(gameTime);
